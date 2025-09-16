@@ -8,7 +8,7 @@ function FormInput ({ children, buttonText }) {
     console.log(data)
   }
   return (
-    <form className='flex flex-col items-center gap-3' onSubmit={handleSubmit(onSubmit)}>
+    <form className='flex flex-col items-center gap-2' onSubmit={handleSubmit(onSubmit)}>
       {React.Children.map(children, child =>
         React.cloneElement(child, { register, errors, watch })
       )}

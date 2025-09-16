@@ -30,8 +30,11 @@ function InputCamp({
       )}
 
       <input
-        className="bg-tertiary w-full h-11 text-secondary pl-10 pr-12 my-2 rounded-lg border border-gray-600 focus:outline-none"
-        type={inputType}                     /* <<-- importante */
+        className="bg-tertiary w-full h-11 
+          text-secondary pl-10 pr-12 my-2 rounded-lg border 
+          border-gray-600 focus:outline-none
+          focus:border-gray-400"
+        type={inputType}                     
         placeholder={placeholder}
         {...(register ? register(data, validationRules) : {})}
       />
