@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #00DA78;
+    --color-secondary: #FFFFFF;
+    --color-tertiary: #323232;
+    --color-background: #191919;
+
+}
+
+.dm-sans{
+  font-family: "Karla", sans-serif;
+}
+ 
+
+.button {
+    @apply flex justify-center items-center 
+      bg-primary text-background font-bold rounded-md;
+}
