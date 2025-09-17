@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons"
 
-import { Title } from './title.jsx'
+import { TitleLogin } from './TitleLogin.jsx'
 import { FormInput } from './FormInput.jsx'
 import { InputCamp } from './InputCamp.jsx'
 import logo from '/icono-white.png'
@@ -16,7 +16,7 @@ function Login () {
   return (
     <main className='main__login'>
       <div className='login'>
-        <Title
+        <TitleLogin
           title='Bienvenido de nuevo'
           imgLink={logo}
           statement={

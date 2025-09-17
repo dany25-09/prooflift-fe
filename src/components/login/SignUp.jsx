@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { faUser, faEnvelope, faLock, faUnlock } from "@fortawesome/free-solid-svg-icons"
 
-import { Title } from './title.jsx'
+import { TitleLogin } from './TitleLogin.jsx'
 import { FormInput } from './FormInput.jsx'
 import { InputCamp } from './InputCamp.jsx'
 import logo from '/icono-white.png'
@@ -22,7 +22,7 @@ function SignUp () {
       <div className='h-screen flex flex-col justify-center gap-5 text-secondary lg:w-[50%] 
             lg:h-[95%] lg:bg-background lg:px-20 
             lg:gap-2 lg:pb-5 lg:rounded-2xl'>
-            <Title
+            <TitleLogin
               title='Crear tu cuenta'
               imgLink={logo}
               statement='Únete y empieza a transformar tu cuerpo'
