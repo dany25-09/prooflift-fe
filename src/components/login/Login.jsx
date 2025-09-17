@@ -1,25 +1,31 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons"
 
 import { Title } from './title.jsx'
 import { FormInput } from './FormInput.jsx'
 import { InputCamp } from './InputCamp.jsx'
+import logo from '/icono-white.png'
 
 function Login () {
+
+  const handleLogin = (data) => {
+    console.log("Datos del login:", data)
+    // Aquí iría la llamada a la API para iniciar sesión
+  }
+
   return (
     <main className='main__login'>
       <div className='login'>
         <Title
           title='Bienvenido de nuevo'
-          imgLink='./src/assets/icono-white.png'
+          imgLink={logo}
           statement={
             <>
               Inicia sesión para continuar con <br /> tu entrenamiento
             </>
           }
         />
-        <FormInput buttonText='Iniciar sesión'>
+        <FormInput buttonText='Iniciar sesión' onSubmit={handleLogin}>
           <InputCamp
             icon={faUser}
             type='email'
