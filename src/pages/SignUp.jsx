@@ -16,7 +16,7 @@ function SignUp () {
       console.log("Datos del registro:", data)
       setButtonContent('Creando cuenta...')
 
-      const result = await signup(data.name, data.email, data.password)
+      const result = await signup(data.nombre, data.email, data.password)
       setTimeout(() => navigate('/'), 2000)
 
     } catch (error) {
@@ -39,7 +39,7 @@ function SignUp () {
                 icon={faUser}
                 type='text'
                 placeholder='Nombre completo'
-                data='name'
+                data='nombre'
               />
               <InputCamp
                 icon={faEnvelope}
