@@ -1,16 +1,21 @@
 import { Link } from 'react-router-dom'
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons"
 
-import { TitleLogin } from './TitleLogin.jsx'
-import { FormInput } from './FormInput.jsx'
-import { InputCamp } from './InputCamp.jsx'
+import { TitleLogin } from '../components/login/TitleLogin.jsx'
+import { FormInput } from '../components/login/FormInput.jsx'
+import { InputCamp } from '../components/login/InputCamp.jsx'
+import { login } from '../API/auth.js'
 import logo from '/icono-white.png'
 
 function Login () {
 
-  const handleLogin = (data) => {
-    console.log("Datos del login:", data)
-    // Aquí iría la llamada a la API para iniciar sesión
+  const handleLogin = async (data) => {
+    try {
+      console.log("Datos del login:", data)
+      const result = await login(data.email, data.password)
+    } catch (error) {
+      console.error("Error en el login:", error)
+    }
   }
 
   return (

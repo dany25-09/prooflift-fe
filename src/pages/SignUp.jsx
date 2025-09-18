@@ -1,20 +1,27 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { faUser, faEnvelope, faLock, faUnlock } from "@fortawesome/free-solid-svg-icons"
 
-import { TitleLogin } from './TitleLogin.jsx'
-import { FormInput } from './FormInput.jsx'
-import { InputCamp } from './InputCamp.jsx'
+import { TitleLogin } from '../components/login/TitleLogin.jsx'
+import { FormInput } from '../components/login/FormInput.jsx'
+import { InputCamp } from '../components/login/InputCamp.jsx'
+import { signup } from '../API/auth.js'
 import logo from '/icono-white.png'
 
 function SignUp () {
 
   const navigate = useNavigate()
 
-  const handleSignUp = (data, setButtonContent) => {
-    console.log("Datos del registro:", data)
-    setButtonContent('Creando cuenta...')
-    
-    setTimeout(() => navigate('/'), 2000)
+  const handleSignUp = async (data, setButtonContent) => {
+    try {
+      console.log("Datos del registro:", data)
+      setButtonContent('Creando cuenta...')
+
+      const result = await signup(data.name, data.email, data.password)
+      setTimeout(() => navigate('/'), 2000)
+
+    } catch (error) {
+      console.error("Error en el registro:", error)
+    }
   }
 
   return (
